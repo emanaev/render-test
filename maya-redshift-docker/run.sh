@@ -1,2 +1,2 @@
 #!/bin/bash
-docker run -it --rm --runtime=nvidia emanaev/maya-redshift
+docker run -it --rm --runtime=nvidia emanaev/maya-redshift bash

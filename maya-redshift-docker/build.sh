@@ -4,5 +4,8 @@ DISTRIB=$(readlink -f $PWD/../../distrib)
 echo Starting distrib at http://${ADDR}:8080
 echo Make sure distributions of Maya and Redshift are in $DISTRIB
 docker run --name some-nginx --rm -v $DISTRIB:/usr/share/nginx/html:ro -d -p 8080:80 nginx
+
 docker build -t emanaev/maya-redshift --build-arg DISTRIB_IP=$ADDR .
+#docker run --runtime=nvidia -it --rm -v $PWD:/mnt emanaev/maya-redshift
+
 docker stop some-nginx
