@@ -1,0 +1,7 @@
+#!/bin/sh
+docker run --runtime=nvidia -d \
+  -v $PWD/scene/:/mnt/ \
+  -e NVIDIA_VISIBLE_DEVICES=3,7,9 \
+  -e SCENE=/mnt/testscene/scenes/01/sc01-test.blend \
+  -e FRAME_FNAME=/mnt/testscene/frame%04d \
+  emanaev/blender
