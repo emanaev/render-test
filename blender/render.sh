@@ -1,2 +1,9 @@
 #!/bin/sh
-blender -b $SCENE -E CYCLES -t $THREADS -P gpu.py
+for blend in $BLEND_DIR/*.blend; do
+  nvidia-smi
+  blender -b $blend -E CYCLES -t $THREADS -y -P gpu.py
+done
+for blend in $BLEND_DIR/*.blend; do
+  nvidia-smi
+  blender -b $blend -E CYCLES -t $THREADS -y -P gpu.py
+done
