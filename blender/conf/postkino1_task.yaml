@@ -1,0 +1,17 @@
+container:
+  image: emanaev/blender:0.5
+  env:
+    BLEND_DIR: /mnt/postkino/shot81
+    FRAME_FNAME: /mnt/postkino/shot81/frame%04d.exr
+    OCIO: /mnt/OpenColorIO-Configs/aces_1.0.3/config.ocio
+  volumes:
+    cifs:
+      type: cifs
+      options:
+        share: 95.216.165.0/render
+#        share: 127.0.0.1/render
+        username: renderman
+        password: "1234567890"
+        vers: "3.0"
+  mounts:
+  - cifs:/mnt:rw

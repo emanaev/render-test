@@ -1,2 +1,2 @@
 #!/bin/sh
-blender -b $SCENE -E CYCLES -t $THREADS -P gpu.py
+blender -y -P script.py

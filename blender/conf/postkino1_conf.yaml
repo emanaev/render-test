@@ -1,0 +1,54 @@
+# cluster size
+numberofnodes: 4
+#nodes_to_exclude: 1,2,3,4,6,7,8,9,10
+#cluster name, bid's and tasks will use it
+tag: "POSTKINO"
+
+# final price = predicted price * (1 + price_coefficient/100)
+price_coefficient: 20
+
+# $ per hour
+max_price: 0.09
+
+# Estimated time of successful start of task (blacklist worker if task failed before ets)
+ets: 400
+
+task_start_timeout: 1200
+
+# Template for task yaml
+template_file: "postkino2_task.yaml"
+
+# duration ("0h" for spot deals; "4h" (for example) for forward deals)
+duration: 16h
+
+# optional, sets counterparty for orders to take, must be HEX(40) string. Will be removed automatically in case of error/not set
+counterparty: ""
+# Identity level of the counterparty. Can be "anonymous", "registered", "identified" and "professional".
+identity: "anonymous"
+
+# MB, integers only
+ramsize: 4000
+# GB, integers only
+storagesize: 2
+#number of cores, integers only
+cpucores: 0
+sysbenchsingle: 0
+sysbenchmulti: 1300
+# Mbits, integers only
+netdownload: 10
+# Mbits, integers only
+netupload: 3
+
+#network settings
+# Indicates whether overlay networking is required, boolean only
+overlay: false
+# Indicates whether inbound connections are required and public IP should be present on worker, boolean only
+incoming: false
+
+#gpu config (optional). If not required, set gpucount: "0"
+#number of units
+gpucount: 6
+# GPU unit RAM,MB, integers only
+gpumem: 6000
+# MH/s, integers only
+ethhashrate: 110

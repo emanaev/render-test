@@ -1,0 +1,33 @@
+# HTTP Server preferences
+# statistics page available on http://localhost:8081 when bot is running.
+http_server:
+  run: true
+  port: 8081
+  user: "sonm"
+  password: "sonm"
+
+#SONM Node preferences
+# default endpoint for SONM Node REST API is 'http://127.0.0.1:15031'
+node_address: 'http://127.0.0.1:15031'
+
+# keystore location and password (default keystore location in Linux is "/etc/sonm/sonm-keystore/")
+ethereum:
+  key_path: "/etc/sonm/sonm-keystore/"
+  password: "1234567890"
+
+#default timeout for all requests to Node API is 60 seconds, you may customize this (optional).
+#timeout: 60
+
+#time since last heartbeat (in seconds) - drops the deal and restart particular node if its status stuck
+restart_timeout: 600
+
+# LIST OF TASKS to run
+tasks:
+#  - blender_config.yaml
+#  - blender2_config.yaml
+#  - postkino1_conf.yaml
+  - postkino1big_conf.yaml
+  - postkino1small_conf.yaml
+  - postkino1fedor_conf.yaml
+#  - postkino1min_conf.yaml
+ 
