@@ -1,0 +1,20 @@
+#!/bin/bash
+
+function build {
+n=`ls frame*.exr|wc -l`
+echo "<h2>Render archives</h2>" >index.html
+ls -w 1 frames*.zip|awk '{print "<a href=\"http://95.216.165.0:8080/postkino/shot/"$1"\" >"$1"</a><br>"}'>>index.html
+echo "<h2>Rendered $n frames</h2>" >>index.html
+ls -w 1 frame*.exr|awk '{print "<a href=\"http://95.216.165.0:8080/postkino/shot/"$1"\" >"$1"</a><br>"}'>>index.html
+}
+
+while : ; do
+cd ~/render/postkino/shot/
+build
+cd ~/render/postkino/shot2/
+build
+cd ~/render/postkino/shot81/
+build
+echo "."
+sleep 60
+done

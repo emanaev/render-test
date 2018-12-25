@@ -1,0 +1,3 @@
+#!/bin/sh
+docker run -d --name samba -p 139:139 -p 445:445 -v $PWD/render:/mount dperson/samba -u "renderman;1234567890" -s "render;/mount;yes;no;no;renderman"
+docker run -d -p 8080:80 -v $PWD/render:/usr/share/nginx/html nginx
