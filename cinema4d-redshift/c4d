@@ -3,4 +3,4 @@
 cd $(ls -d /opt/maxon/*)/bin
 source ./setup_c4d_env
 cd /render
-c4d_clr $*
+cat /login | c4d_clr $*

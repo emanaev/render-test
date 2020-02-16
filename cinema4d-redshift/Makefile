@@ -6,5 +6,5 @@ build:
 	docker stop distrib
 
 run:
-	docker run -it --entrypoint=/bin/bash $(IMAGE)
+	docker run -it $(IMAGE) -render /render/balltest.c4d -oimage /render/balltest -oformat JPG
 

@@ -12,6 +12,7 @@ RUN curl http://192.168.1.3:8080/redshift_v2.6.51_linux.run -o redshift.run && \
     rm redshift.run
 RUN cp -r /usr/redshift/redshift4c4d/R21/Redshift $(ls -d /opt/maxon/*/bin/plugins)
 COPY c4d /
+COPY login /
 RUN mkdir /render
 COPY balltest.c4d /render
 ENTRYPOINT ["/c4d"]
