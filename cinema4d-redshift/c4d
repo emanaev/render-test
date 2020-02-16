@@ -2,4 +2,5 @@
 
 cd $(ls -d /opt/maxon/*)/bin
 source ./setup_c4d_env
-./c4d_clr $*
+cd /render
+c4d_clr $*
